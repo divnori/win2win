@@ -4,7 +4,6 @@ Social app that promotes STEM participation
 "What I Need 2 WIN"
 
 - Students can look at STEM events and enroll in them 
-- Shows the top performing students
 - Shows what your peers are enrolled in 
 - Increases SmartScore with participation
 
