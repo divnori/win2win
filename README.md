@@ -1,7 +1,7 @@
 # win2win
 Social app that promotes STEM participation
 
-"What I Need 2 WIN"
+"What's Important Now 2 WIN"
 
 - Students can look at STEM events and enroll in them 
 - Shows what your peers are enrolled in 
