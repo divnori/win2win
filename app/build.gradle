@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "25.0.1"
+    defaultConfig {
+        applicationId "com.norihome.smartstarz"
+        minSdkVersion 23
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug{
+            debuggable true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile project(path: ':backend', configuration: 'android-endpoints')
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.google.android.gms:play-services-auth:9.0.0'
+    compile 'com.google.code.findbugs:jsr305:2.0.1'
+    compile 'com.android.support:design:24.2.1'
+    compile 'me.dm7.barcodescanner:zxing:1.8.4'
+    testCompile 'junit:junit:4.12'
+    //compile project(path: ':backend')
+
+    //compile project(path: ':backend')
+}

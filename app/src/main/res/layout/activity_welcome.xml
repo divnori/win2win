@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_welcome"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.norihome.smartstarz.WelcomeActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:ems="10"
+        android:layout_marginTop="114dp"
+        android:id="@+id/Password_field"
+        android:hint="Access Code"
+        android:layout_below="@+id/iAmStudent_button"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="If you are an administrator, type in the access code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:layout_marginBottom="44dp"
+        android:layout_alignBottom="@+id/Password_field"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    <Button
+        android:layout_height="wrap_content"
+        android:id="@+id/iAmAdmin_button"
+        android:text="  I am an administrator  "
+        android:onClick="onAdminButtonClick"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/Password_field"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="Welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/welcome_textview"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="25dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/my_toolbar"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="I am a Student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:id="@+id/iAmStudent_button"
+        android:onClick="onStudentButtonClick"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/welcome_textview"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

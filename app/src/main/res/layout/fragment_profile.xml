@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.norihome.smartstarz.ProfileFragment">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spacer"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3" />
+
+            <TextView
+                android:text="Name :  "
+                android:layout_width="370dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="20px"
+                android:paddingLeft="20px"
+                android:id="@+id/text_profileName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2" />
+
+            <TextView
+                android:text="Group:  "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20px"
+                android:id="@+id/text_profileGroup"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3" />
+
+            <TextView
+                android:text="Win Score:  "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20px"
+                android:id="@+id/text_profileSmartScore"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView5" />
+
+            <TextView
+                android:text="  Past Events:  "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_profilePastCompetitions"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                />
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="275dp"
+                android:id="@+id/list_pastCompetitions"
+                android:layout_weight="0.74">
+            </ListView>
+
+            <Button
+                android:text="SCAN QR CODE"
+                android:layout_width="match_parent"
+                android:id="@+id/button_scan"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@android:color/white"
+                android:onClick="onScanButtonClick" />
+
+        </LinearLayout>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

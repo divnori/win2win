@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Win2Win</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_student">StudentActivity</string>
+    <string name="title_activity_admin">AdminActivity</string>
+    <string name="title_activity_admin_feed">AdminFeed</string>
+</resources>

@@ -1,0 +1,459 @@
+{
+ "kind": "discovery#rpcDescription",
+ "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/nkSMqaVALaW_zfMpMmKD3Ht3yns\"",
+ "discoveryVersion": "v1",
+ "id": "smartStarzApi:v1",
+ "name": "smartStarzApi",
+ "version": "v1",
+ "description": "This is an API",
+ "ownerDomain": "backend.smartstarz.norihome.com",
+ "ownerName": "backend.smartstarz.norihome.com",
+ "icons": {
+  "x16": "https://www.gstatic.com/images/branding/product/1x/googleg_16dp.png",
+  "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
+ },
+ "protocol": "rpc",
+ "rootUrl": "https://myApplicationId.appspot.com/_ah/api/",
+ "rpcUrl": "https://myApplicationId.appspot.com/_ah/api/rpc",
+ "rpcPath": "/_ah/api/rpc",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "EventBean": {
+   "id": "EventBean",
+   "type": "object",
+   "properties": {
+    "allowedStudents": {
+     "type": "string"
+    },
+    "date": {
+     "type": "string"
+    },
+    "description": {
+     "type": "string"
+    },
+    "enrolledStudents": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "level": {
+     "type": "string",
+     "format": "int64"
+    },
+    "name": {
+     "type": "string"
+    }
+   }
+  },
+  "EventBeanCollection": {
+   "id": "EventBeanCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "EventBean"
+     }
+    }
+   }
+  },
+  "GroupsBean": {
+   "id": "GroupsBean",
+   "type": "object",
+   "properties": {
+    "groupMembers": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "name": {
+     "type": "string"
+    }
+   }
+  },
+  "GroupsBeanCollection": {
+   "id": "GroupsBeanCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "GroupsBean"
+     }
+    }
+   }
+  },
+  "StudentBean": {
+   "id": "StudentBean",
+   "type": "object",
+   "properties": {
+    "enrolledCompetitions": {
+     "type": "string"
+    },
+    "groupName": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "name": {
+     "type": "string"
+    },
+    "pastCompetitions": {
+     "type": "string"
+    },
+    "smartScore": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  },
+  "StudentBeanCollection": {
+   "id": "StudentBeanCollection",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "StudentBean"
+     }
+    }
+   }
+  }
+ },
+ "methods": {
+  "smartStarzApi.addStudentToEvent": {
+   "id": "smartStarzApi.addStudentToEvent",
+   "parameters": {
+    "eventName": {
+     "type": "string",
+     "required": true
+    },
+    "studentName": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "eventName",
+    "studentName"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.addStudentToGroup": {
+   "id": "smartStarzApi.addStudentToGroup",
+   "parameters": {
+    "resource": {
+     "$ref": "GroupsBean"
+    },
+    "studentName": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "resource",
+    "studentName"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.clearEvents": {
+   "id": "smartStarzApi.clearEvents",
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.clearGroups": {
+   "id": "smartStarzApi.clearGroups",
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.clearStudents": {
+   "id": "smartStarzApi.clearStudents",
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.deleteEvent": {
+   "id": "smartStarzApi.deleteEvent",
+   "parameters": {
+    "eventName": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "eventName"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.deleteGroup": {
+   "id": "smartStarzApi.deleteGroup",
+   "parameters": {
+    "groupName": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "groupName"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.getEvents": {
+   "id": "smartStarzApi.getEvents",
+   "allowGet": true,
+   "returns": {
+    "$ref": "EventBeanCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.getEventsByName": {
+   "id": "smartStarzApi.getEventsByName",
+   "allowGet": true,
+   "parameters": {
+    "eventName": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "eventName"
+   ],
+   "returns": {
+    "$ref": "EventBeanCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.getGroups": {
+   "id": "smartStarzApi.getGroups",
+   "allowGet": true,
+   "returns": {
+    "$ref": "GroupsBeanCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.getStudentByName": {
+   "id": "smartStarzApi.getStudentByName",
+   "allowGet": true,
+   "parameters": {
+    "studentName": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "studentName"
+   ],
+   "returns": {
+    "$ref": "StudentBean"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.getStudents": {
+   "id": "smartStarzApi.getStudents",
+   "allowGet": true,
+   "returns": {
+    "$ref": "StudentBeanCollection"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.removeStudentFromEvent": {
+   "id": "smartStarzApi.removeStudentFromEvent",
+   "parameters": {
+    "eventName": {
+     "type": "string",
+     "required": true
+    },
+    "studentName": {
+     "type": "string",
+     "required": true
+    },
+    "updateStudent": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "eventName",
+    "studentName",
+    "updateStudent"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.storeEvent": {
+   "id": "smartStarzApi.storeEvent",
+   "parameters": {
+    "resource": {
+     "$ref": "EventBean"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.storeGroup": {
+   "id": "smartStarzApi.storeGroup",
+   "parameters": {
+    "resource": {
+     "$ref": "GroupsBean"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.storeStudent": {
+   "id": "smartStarzApi.storeStudent",
+   "parameters": {
+    "resource": {
+     "$ref": "StudentBean"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.updateEvent": {
+   "id": "smartStarzApi.updateEvent",
+   "parameters": {
+    "resource": {
+     "$ref": "EventBean"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.updateGroup": {
+   "id": "smartStarzApi.updateGroup",
+   "parameters": {
+    "newGroupName": {
+     "type": "string",
+     "required": true
+    },
+    "resource": {
+     "$ref": "GroupsBean"
+    }
+   },
+   "parameterOrder": [
+    "resource",
+    "newGroupName"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "smartStarzApi.updateStudent": {
+   "id": "smartStarzApi.updateStudent",
+   "parameters": {
+    "eventName": {
+     "type": "string",
+     "required": true
+    },
+    "studentName": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "studentName",
+    "eventName"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_rankingNumber"
+            android:layout_weight="0.08"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:gravity="left" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_groupName"
+            android:layout_weight="0.32"
+            android:textSize="20dp"
+            android:gravity="left"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_smartScore"
+            android:layout_weight="0.32"
+            android:textSize="20dp"
+            android:gravity="right" />
+    </LinearLayout>
+</LinearLayout>
